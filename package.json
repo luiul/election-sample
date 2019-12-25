@@ -1,5 +1,5 @@
 {
-  "name": "pet-shop",
+  "name": "election",
   "version": "1.0.0",
   "description": "",
   "main": "truffle.js",
@@ -13,6 +13,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.5.4",
+    "truffle": "^5.1.5",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "fsevents": "^2.1.2",
+    "webpack": "^4.41.4",
+    "yarn": "^1.21.1"
   }
 }
