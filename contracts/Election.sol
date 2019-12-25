@@ -10,15 +10,18 @@ contract Election {
     uint voteCount;
   }
 
-  // store in hash-table and get candidates by declaring it a public variable (automatic in Solidity)
-  mapping(uint => Candidate) public candidates;
-
   // count of the store candidates, because (1) in Solidity there is no way to get the size of a mapping or (2) iterate over it with a loop
   // any key we haven't set a value for returns the default value (in this case an empty candidate)
   uint public candidatesCount;
 
+  // store in hash-table and get candidates by declaring it a public variable (automatic in Solidity)
+  mapping(uint => Candidate) public candidates;
+
   // store addresses that have voted
   mapping(address => bool) public voters;
+
+  // vote event
+  event votedEvent (uint _candidateId);
 
   // constructor for contract object
   constructor() public {
@@ -48,5 +51,8 @@ contract Election {
     // require a valid candidate id
     // update candidate vote count
     candidates[_candidateId].voteCount ++;
+
+    //trigger vote event
+    emit votedEvent(_candidateId);
   }
 }
