@@ -23,11 +23,11 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON("Election.json", function(election) {
+    $.getJSON("SupplierSelection.json", function(selection) {
       // Instantiate a new truffle contract from the artifact
-      App.contracts.Election = TruffleContract(election);
+      App.contracts.SupplierSelection = TruffleContract(selection);
       // Connect provider to interact with contract
-      App.contracts.Election.setProvider(App.web3Provider);
+      App.contracts.SupplierSelection.setProvider(App.web3Provider);
 
       App.listenForEvents();
 
@@ -37,11 +37,11 @@ App = {
 
   // Listen for events emitted from the contract
   listenForEvents: function() {
-    App.contracts.Election.deployed().then(function(instance) {
+    App.contracts.SupplierSelection.deployed().then(function(instance) {
       // Restart Chrome if you are unable to receive this event
       // This is a known issue with Metamask
       // https://github.com/MetaMask/metamask-extension/issues/2393
-      instance.votedEvent({}, {
+      instance.VoteCast({}, {
         fromBlock: 0,
         toBlock: 'latest'
       }).watch(function(error, event) {
@@ -53,7 +53,7 @@ App = {
   },
 
   render: function() {
-    var electionInstance;
+    var selectionInstance;
     var loader = $("#loader");
     var content = $("#content");
 
@@ -69,32 +69,32 @@ App = {
     });
 
     // Load contract data
-    App.contracts.Election.deployed().then(function(instance) {
-      electionInstance = instance;
-      return electionInstance.candidatesCount();
-    }).then(function(candidatesCount) {
-      var candidatesResults = $("#candidatesResults");
-      candidatesResults.empty();
+    App.contracts.SupplierSelection.deployed().then(function(instance) {
+      selectionInstance = instance;
+      return selectionInstance.supplierCount();
+    }).then(function(supplierCount) {
+      var supplierResult = $("#supplierResult");
+      supplierResult.empty();
 
-      var candidatesSelect = $('#candidatesSelect');
-      candidatesSelect.empty();
+      var supplierSelect = $('#supplierSelect');
+      supplierSelect.empty();
 
-      for (var i = 1; i <= candidatesCount; i++) {
-        electionInstance.candidates(i).then(function(candidate) {
-          var id = candidate[0];
-          var name = candidate[1];
-          var voteCount = candidate[2];
+      for (var i = 1; i <= supplierCount; i++) {
+        selectionInstance.suppliers(i).then(function(supplier) {
+          var id = supplier[0];
+          var name = supplier[1];
+          var voteCount = supplier[2];
 
-          // Render candidate Result
-          var candidateTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
-          candidatesResults.append(candidateTemplate);
+          // Render supplier Result
+          var supplierTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
+          supplierResult.append(supplierTemplate);
 
-          // Render candidate ballot option
-          var candidateOption = "<option value='" + id + "' >" + name + "</ option>"
-          candidatesSelect.append(candidateOption);
+          // Render supplier ballot option
+          var supplierOption = "<option value='" + id + "' >" + name + "</ option>"
+          supplierSelect.append(supplierOption);
         });
       }
-      return electionInstance.voters(App.account);
+      return selectionInstance.voters(App.account);
     }).then(function(hasVoted) {
       // Do not allow a user to vote
       if(hasVoted) {
@@ -108,9 +108,9 @@ App = {
   },
 
   castVote: function() {
-    var candidateId = $('#candidatesSelect').val();
-    App.contracts.Election.deployed().then(function(instance) {
-      return instance.vote(candidateId, { from: App.account });
+    var supplierId = $('#supplierSelect').val();
+    App.contracts.SupplierSelection.deployed().then(function(instance) {
+      return instance.vote(supplierId, { from: App.account });
     }).then(function(result) {
       // Wait for votes to update
       $("#content").hide();
