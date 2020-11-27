@@ -15,6 +15,7 @@ DAPP to elect mutual supplier in a Group Purchasing Organization by election. We
 <img src="figures/figure1.png" width="600">
 <sub>Simplified diagram of web application architecture with central web server based on \[DABBS 2019; SINELNIKOVA 2017; SHKLAR et al. 2003, p. 34, 204\]</sub>
 
+
 <img src="figures/figure2.png" width="600">
 <sub>Simplified diagram of decentralized application based on the Ethereum blockchain based on \[ETHEREUM COMMUNITY 2019b; SINELNIKOVA 2017\]</sub>
 
