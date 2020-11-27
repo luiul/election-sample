@@ -13,9 +13,11 @@ It is important to understand and monitor the development of new technologies th
 DAPP to elect mutual supplier in a Group Purchasing Organization by election. We transition from a typical web application architecture into a decentralized application architecture based on the Ethereum blockchain and smart contracts. 
 
 ![web application architecture with central web server](figures/figure1.png)
+
 Simplified diagram of web application architecture with central web server based on \[DABBS 2019; SINELNIKOVA 2017; SHKLAR et al. 2003, p. 34, 204\]
 
 ![web application architecture with central web server](figures/figure2.png)
+
 Simplified diagram of decentralized application based on the Ethereum blockchain based on \[ETHEREUM COMMUNITY 2019b; SINELNIKOVA 2017\] 
 
 # Resources
