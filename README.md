@@ -13,18 +13,10 @@ It is important to understand and monitor the development of new technologies th
 DAPP to elect mutual supplier in a Group Purchasing Organization by election. We transition from a typical web application architecture into a decentralized application architecture based on the Ethereum blockchain and smart contracts. 
 
 <img src="figures/figure1.png" width="600">
-<!---
-![web application architecture with central web server](figures/figure1.png)
--->
-
-Simplified diagram of web application architecture with central web server based on \[DABBS 2019; SINELNIKOVA 2017; SHKLAR et al. 2003, p. 34, 204\]
+<sub>Simplified diagram of web application architecture with central web server based on \[DABBS 2019; SINELNIKOVA 2017; SHKLAR et al. 2003, p. 34, 204\]</sub>
 
 <img src="figures/figure2.png" width="600">
-<!---
-![web application architecture with central web server](figures/figure2.png)
--->
-
-Simplified diagram of decentralized application based on the Ethereum blockchain based on \[ETHEREUM COMMUNITY 2019b; SINELNIKOVA 2017\] 
+<sub>Simplified diagram of decentralized application based on the Ethereum blockchain based on \[ETHEREUM COMMUNITY 2019b; SINELNIKOVA 2017\]</sub>
 
 # Resources
 Dabbs, Mark. 2019. The Fundamentals of Web Application Architecture. \[Online\] July 2019. \[Cited: January 12, 2020.\] https://reinvently.com/blog/fundamentals-web-application-architecture/.
@@ -34,3 +26,8 @@ Ethereum Community. 2019b. web3j Docs Transactions. \[Online\] 2019. \[Cited: Ja
 Sinelnikova, Elena. 2017. Decentralized applications development for .NET developers using Microsoft Visual Studio. \[Online\] November 2017. \[Cited: January 12, 2020.\] https://blockgeeks.com/decentralized-applications-development-net-developers/.
 
 Shklar, Leon and Rosen, Richard. 2003. Web Application Architecture: Principles, Protocols and Practices. West Sussex : John Wiley & Sons Ltd, 2003. ISBN 0-471-48656-6.
+
+<!---
+alternative way to display an image:
+![web application architecture with central web server](figures/figure1.png)
+-->
