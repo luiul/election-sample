@@ -1,3 +1,5 @@
+**Disclaimer: potential security vulnerabilities in project dependencies will remained unchanged.** 
+
 # Supplier Selection DApp
 Supplier Selection DApp running on Ethereum. 
 
