@@ -12,7 +12,7 @@ in the Pharmaceutical Industry
 It is important to understand and monitor the development of new technologies that have the potential to affect the structural design and functioning of markets. In the thesis, we aim to design and develop a mechanism to facilitate peer-to-peer trade among disparate, geographically-dispersed organizations in the pharmaceutical supply chain that minimizes the need for an authoritative trusted third party and its related frictions and costs. This mechanism must be able to operate on a decentralized, distributed computing system, which is the characteristic system in most modern supply chains. The computing system we consider is Ethereum and the mechanism is Turing complete smart contracts. 
 
 # Description
-DAPP to elect mutual supplier in a Group Purchasing Organization by election. We transition from a typical web application architecture into a decentralized application architecture based on the Ethereum blockchain and smart contracts. 
+DApp to elect mutual supplier in a Group Purchasing Organization by election. We transition from a typical web application architecture into a decentralized application architecture based on the Ethereum blockchain and smart contracts. 
 
 <img src="figures/figure1.png" width="800" alt="Simplified diagram of web application architecture with central web server" class="center">
 
